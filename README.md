@@ -16,7 +16,7 @@ We are building a Todo App together!  At first we will use Rails, and later we w
  
 ### Database initialization
  
-* Coming soon
+* `rails db:migrate`
  
 ### How to run the test suite
  
