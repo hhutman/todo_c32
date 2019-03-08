@@ -1,5 +1,5 @@
 <h1>Tasks</h1>
-
+ 
 <table class="table">
   <thead>
     <tr>
@@ -7,25 +7,23 @@
       <th></th>
     </tr>
   </thead>
-
+ 
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
         <td>
-          <%= task.description %>
+          <% if task.completed? %>
+            <s><%= task.description %></s>
+          <% else %>
+            <%= task.description %>
+          <% end %>
         </td>
-        <td>
-          <%= link_to 'Destroy',
-              task,
-              method: :delete,
-              data: { confirm: 'Are you sure?' },
-              class: "btn btn-danger float-right" %>
-        </td>
+        <td><%= render 'buttons', task: task %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<hr/>
-
+ 
+<hr>
+ 
 <%= render 'form', task: @task %>
