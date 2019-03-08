@@ -15,7 +15,7 @@ class TasksController < ApplicationController
       notice: 'Task was successfully created.'
     else
       redirect_to root_url,
-      alert: @task.errors.full_messages.join(', ')
+      alert: @task.errors.full_messages.to_sentence
     end
   end
 
